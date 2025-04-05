@@ -2,7 +2,7 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    connectionString: 'postgresql://neondb_owner:npg_WpTDyYH6Mt0n@ep-morning-cloud-a5p4js6l-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require',
+  connectionString: 'postgresql://fullstack_wut1_user:2U7gh27uiFCcAqqjX4C9ZP3r3UqToXiY@dpg-cvo31jk9c44c73bhucfg-a.oregon-postgres.render.com/fullstack_wut1?sslmode=require',
 });
 
 const pg = require('pg');
