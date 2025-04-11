@@ -4,18 +4,6 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Contraseña segura para validar el acceso
-const API_PASSWORD = "my_teki-secure_password";  // Usa la misma contraseña que en api.js
-
-// Middleware para verificar la contraseña en el encabezado Authorization
-const authenticateRequest = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  if (!authHeader || authHeader !== `Bearer ${API_PASSWORD}`) {
-    return res.status(403).json({ error: 'Acceso no autorizado' });
-  }
-  next();  // Si la contraseña es válida, continúa con la solicitud
-};
-
 // Middleware de logging personalizado
 app.use((req, res, next) => {
     const start = process.hrtime();
@@ -37,7 +25,6 @@ function getDurationInMilliseconds(start) {
 // Middleware para analizar el cuerpo de la solicitud en formato JSON
 app.use(express.json());
 app.use(cors());
-app.use(authenticateRequest); // Aplica el middleware de autenticación
 
 // Importa las rutas
 const departamentoRoutes = require('./routes/departamento');

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../conexionDB'); 
 
-
 // Obtener todos los feriados
 router.get('/', async (req, res) => {
     try {
